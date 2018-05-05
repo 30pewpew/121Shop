@@ -49,10 +49,10 @@ else {
 
             <div class="input-field col s6">
               <select class="icons" name="country" value="<?= $country_sess; ?>">
-          <option value=""  disabled selected>Choose your country</option>
-          <option value="Morocco">Morocco</option>
-          <option value="Egypt">Egypt</option>
-          <option value="Algeria">Algeria</option>
+          <option value=""  disabled selected>Choose Payment Method</option>
+          <option value="Paypal">Paypal</option>
+          <option value="Visa">Visa</option>
+          <option value="Master Card">Master Card</option>
         </select>
         <label>Country</label>
             </div>
@@ -60,13 +60,13 @@ else {
             <div class="input-field col s6">
               <i class="material-icons prefix">account_circle</i>
               <input id="icon_prefix" type="text" name="firstname" value='<?= $firstname_sess; ?>' class="validate" required>
-              <label for="icon_prefix">First Name</label>
+              <label for="icon_prefix">Full Name</label>
             </div>
 
             <div class="input-field col s6">
               <i class="material-icons prefix">perm_identity</i>
               <input id="icon_prefix" type="text" name="lastname" value='<?= $lastname_sess; ?>' class="validate" required>
-              <label for="icon_prefix">Last Name</label>
+              <label for="icon_prefix">Card Number</label>
             </div>
 
 

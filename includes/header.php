@@ -4,8 +4,8 @@
     <head>
       <meta charset="utf-8">
       <meta http-equiv="X-UA-Compatible" content="IE=edge">
-      <title>Smartshop</title>
-      <link rel="icon" href="src/img/icon.png">
+      <title>ESY BUYS</title>
+      <link rel="icon" href="src/img/esybuys.png">
       <!--Let browser know website is optimized for mobile-->
       <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
       <!-- font-awesome -->

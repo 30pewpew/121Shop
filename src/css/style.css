@@ -82,11 +82,13 @@
 }
 
 .nav-wrapper-2 .brand {
-  background-image: url("../img/logo.svg");
+  background-image: url("../img/esybuys.png");
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
-  padding: 24px 24px;
+  padding: 30px 30px;
+  height: 150%;
+  width: 450%;
   margin-top: 6px;
   transition: .5s;
 }

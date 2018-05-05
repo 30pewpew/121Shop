@@ -90,7 +90,7 @@ $id_product =$_GET['id'];
           <div class="input-field col s12">
             <i class="material-icons prefix">shopping_basket</i>
             <input id="icon_prefix" type="number" name="quantity" min="1" class="validate" required>
-            <label for="icon_prefix">Qantity</label>
+            <label for="icon_prefix">Quantity</label>
           </div>
 
            <?php
