@@ -1,13 +1,15 @@
 -- phpMyAdmin SQL Dump
--- version 4.5.1
--- http://www.phpmyadmin.net
+-- version 4.7.7
+-- https://www.phpmyadmin.net/
 --
--- Client :  127.0.0.1
--- Généré le :  Lun 20 Février 2017 à 11:57
--- Version du serveur :  10.1.13-MariaDB
--- Version de PHP :  5.6.21
+-- Host: 127.0.0.1
+-- Generation Time: May 05, 2018 at 08:36 AM
+-- Server version: 10.1.30-MariaDB
+-- PHP Version: 7.2.2
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET AUTOCOMMIT = 0;
+START TRANSACTION;
 SET time_zone = "+00:00";
 
 
@@ -17,13 +19,13 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Base de données :  `smartshop`
+-- Database: `smartshop`
 --
 
 -- --------------------------------------------------------
 
 --
--- Structure de la table `ads`
+-- Table structure for table `ads`
 --
 
 CREATE TABLE `ads` (
@@ -36,7 +38,7 @@ CREATE TABLE `ads` (
 -- --------------------------------------------------------
 
 --
--- Structure de la table `category`
+-- Table structure for table `category`
 --
 
 CREATE TABLE `category` (
@@ -46,21 +48,21 @@ CREATE TABLE `category` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Contenu de la table `category`
+-- Dumping data for table `category`
 --
 
 INSERT INTO `category` (`id`, `name`, `icon`) VALUES
-(1, 'Smartphone', 'phone'),
-(2, 'Smartcam', 'cam'),
-(3, 'Laptop', 'laptop'),
-(4, 'Smartwatch', 'watch'),
-(5, 'Smartspeaker', 'speaker'),
-(6, 'SmartVR', 'vr');
+(1, 'Clash Royale', 'cr'),
+(2, 'Crystal Gems', 'cg'),
+(3, 'Marvel', 'marvel'),
+(4, 'Loss IRL', 'cam'),
+(5, 'Cartoon', 'cartoon'),
+(6, 'Digital', 'vr');
 
 -- --------------------------------------------------------
 
 --
--- Structure de la table `command`
+-- Table structure for table `command`
 --
 
 CREATE TABLE `command` (
@@ -73,7 +75,7 @@ CREATE TABLE `command` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Contenu de la table `command`
+-- Dumping data for table `command`
 --
 
 INSERT INTO `command` (`id`, `id_produit`, `quantity`, `dat`, `statut`, `id_user`) VALUES
@@ -119,12 +121,16 @@ INSERT INTO `command` (`id`, `id_produit`, `quantity`, `dat`, `statut`, `id_user
 (119, 9, 1, '2017-02-19 22:29:15', 'paid', 8),
 (120, 13, 1, '2017-02-19 22:29:15', 'paid', 8),
 (121, 14, 1, '2017-02-19 22:45:27', 'paid', 8),
-(125, 13, 2, '2017-02-20 10:49:00', 'paid', 8);
+(125, 13, 2, '2017-02-20 10:49:00', 'paid', 8),
+(126, 13, 2, '2018-05-04 22:43:45', 'ordered', 0),
+(127, 13, 2, '2018-05-04 22:43:49', 'ordered', 0),
+(128, 12, 2, '2018-05-05 05:49:57', 'ordered', 0),
+(129, 17, 2, '2018-05-05 06:16:38', 'ordered', 0);
 
 -- --------------------------------------------------------
 
 --
--- Structure de la table `details_command`
+-- Table structure for table `details_command`
 --
 
 CREATE TABLE `details_command` (
@@ -142,7 +148,7 @@ CREATE TABLE `details_command` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Contenu de la table `details_command`
+-- Dumping data for table `details_command`
 --
 
 INSERT INTO `details_command` (`id`, `product`, `quantity`, `price`, `id_command`, `id_user`, `user`, `address`, `country`, `city`, `statut`) VALUES
@@ -179,7 +185,7 @@ INSERT INTO `details_command` (`id`, `product`, `quantity`, `price`, `id_command
 -- --------------------------------------------------------
 
 --
--- Structure de la table `pictures`
+-- Table structure for table `pictures`
 --
 
 CREATE TABLE `pictures` (
@@ -189,7 +195,7 @@ CREATE TABLE `pictures` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Contenu de la table `pictures`
+-- Dumping data for table `pictures`
 --
 
 INSERT INTO `pictures` (`id`, `picture`, `id_produit`) VALUES
@@ -227,7 +233,7 @@ INSERT INTO `pictures` (`id`, `picture`, `id_produit`) VALUES
 -- --------------------------------------------------------
 
 --
--- Structure de la table `product`
+-- Table structure for table `product`
 --
 
 CREATE TABLE `product` (
@@ -242,25 +248,25 @@ CREATE TABLE `product` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Contenu de la table `product`
+-- Dumping data for table `product`
 --
 
 INSERT INTO `product` (`id`, `id_category`, `name`, `description`, `price`, `id_picture`, `thumbnail`, `promo`) VALUES
-(7, 1, 'Samsung s7 edge', '5.50-inch 1440x2560 display powered by 1.6GHz octa-core processor alongside 4GB of RAM and 12-megapixel', 560, 2, 'galaxy-s7-edge-black.png', ''),
-(8, 1, 'Iphone 7', 'Features 3G, 4.7â€³ LED-backlit IPS LCD display, 12 MP camera, Wi-Fi, GPS, Bluetooth', 700, 8, 'rsz_iphone-7-jet-black.jpg', ''),
-(9, 2, 'Gopro Hero 5', ' GoPro HERO5 Black features Supports 4K30, 2.7K60, 1080p120 Video, Capture 12MP Photos at 30fps', 450, 9, 'gopro5.png', '1'),
-(11, 6, 'Oculus rift', 'The Oculus Rift is a virtual reality system that completely immerses you inside virtual worlds', 600, 10, 'Oculus_Product_Dynamic 45.jpg', '1'),
-(12, 3, 'MSI GP62 Leopard Pro', 'In-depth review of the MSI GP62-2QEi781FD (Intel Core i7 5700HQ, NVIDIA GeForce GTX 950M, 15.6", 2.3 kg) ... The MSI GE series is already the manufacturer''s entry-level gaming series. ..... ', 839, 12, 'msi-gp62-6qf-product_pictures-3d1.png', ''),
-(13, 5, 'Amazon Echo', 'Amazon Echo is a hands-free speaker you control with your voice. Echo connects to the Alexa Voice Service to play music, provide information, news, sports ...', 179, 13, 'amazon-echo-image.jpg', ''),
-(14, 4, 'Apple Watch', 'The new Apple Watch is the ultimate device for your healthy life. Choose from a range of models including Apple Watch Series 2 and Apple Watch Nike+', 349, 14, 'apple-watch-premium-design-vs-pebble-time-round-classic-design.jpg', ''),
-(15, 1, 'Google Pixel XL', 'XL 5.5" Phone 128GB Quite Black Cell Smart. GOOGLE PIXEL XL 5.5" Black 32GB TRUE ANDROID PHONE CDMA+GSM WORLD UNLOCKED', 649, 15, 'pixel.png', ''),
-(16, 2, 'Canon EOS 7D', 'The EOS 7D features a Canon-designed 18.0 Megapixel APS-C size CMOS sensor that captures such a high level of resolution it''s easy to crop images for ...', 889, 16, 'EOS 7D Mark II Hero.jpg', ''),
-(17, 1, 'Nexus 6P', 'All-metal design Unlocked, LTE smartphone with a powerful 2GHz Snapdragon 810 V2.1 Processor and the newest Android software, Android 6.0 marshmallow.', 499, 17, 'nexus-6p-topic-full.png', '');
+(7, 1, 'Mini Pekka', 'By Skizzo Perena', 560, 2, 'clash_royale_1.png', ''),
+(8, 1, 'Dragon', 'By Skizzo Perena', 700, 8, 'clash_royale_2.png', ''),
+(9, 2, 'Garnet', 'By Skizzo Perena', 450, 9, 'crystal_gem_1.png', '1'),
+(11, 6, 'Flag', 'By Skizzo Perena', 600, 10, 'digital_1.jpg', '1'),
+(12, 3, 'Marvel', 'By Skizzo Perena', 839, 12, 'marvel_1.png', ''),
+(13, 5, 'Wooper', 'By Skizzo Perena', 179, 13, 'cartoon_1.jpg', ''),
+(14, 4, 'Apple Watch', 'By Skizzo Perena', 349, 14, 'apple.jpg', ''),
+(15, 1, 'Giant', 'By Skizzo Perena', 649, 15, 'clash_royale_3.png', ''),
+(16, 2, 'Hokage', 'By Skizzo Perena', 889, 16, 'crystal_gem_2.png', ''),
+(17, 1, 'Pekka', 'By Skizzo Perena', 499, 17, 'clash_royale_4.png', '');
 
 -- --------------------------------------------------------
 
 --
--- Structure de la table `users`
+-- Table structure for table `users`
 --
 
 CREATE TABLE `users` (
@@ -276,7 +282,7 @@ CREATE TABLE `users` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Contenu de la table `users`
+-- Dumping data for table `users`
 --
 
 INSERT INTO `users` (`id`, `email`, `firstname`, `lastname`, `password`, `address`, `city`, `country`, `role`) VALUES
@@ -286,93 +292,105 @@ INSERT INTO `users` (`id`, `email`, `firstname`, `lastname`, `password`, `addres
 (8, 'anas@anas.com', 'anas', 'mazouni', '76eb649c047cbecad7c36e71374bc9a5', 'N 20 Lot El dunno Cairo', 'Cairo', 'Morocco', 'client'),
 (9, 'badris@hotmail.com', 'abdo', 'badris', '267c88a9c130619b5e8fe370c0ae7730', 'N 48 Lot El Waha Errachidia', 'Errachidia', 'Morocco', 'client'),
 (10, 'mus@hotmail.com', 'mus', 'ghallou', 'd62ec24d065e424dd816ce7828f62584', 'N 102 Cairo', 'Cairo', 'Egypt', 'client'),
-(11, 'ali@ali.com', 'ali', 'ghallou', '86318e52f5ed4801abe1d13d509443de', 'N 23 Lot El Waha Errachidia', 'Errachidia', 'Morocco', 'client');
+(11, 'ali@ali.com', 'ali', 'ghallou', '86318e52f5ed4801abe1d13d509443de', 'N 23 Lot El Waha Errachidia', 'Errachidia', 'Morocco', 'client'),
+(12, '30pewpew@gmail.com', 'ethan', 'sy', '048b1e3da0dfe610b3865ddc148dff30', '815 A. Mabini', 'Mandaluyong', 'Morocco', 'client'),
+(13, 'ethan@gmail.com', 'ethan', 'sy', '048b1e3da0dfe610b3865ddc148dff30', '815 A. Mabini', 'Mandaluyong', 'Morocco', 'client'),
+(14, 'admin@gmail.com', 'User ', 'Administrator', 'f19826e36a24ce639a7036c19b33f97d', '815 A. Mabini', 'Mandaluyong', '', 'admin'),
+(15, 'admin@gmail.com', 'User ', 'Administrator', 'b433ce675b32a824e24d762ca0fa1ba9', 'Admin', 'Admin', 'Philippines', 'client');
 
 --
--- Index pour les tables exportées
+-- Indexes for dumped tables
 --
 
 --
--- Index pour la table `ads`
+-- Indexes for table `ads`
 --
 ALTER TABLE `ads`
   ADD PRIMARY KEY (`id`);
 
 --
--- Index pour la table `category`
+-- Indexes for table `category`
 --
 ALTER TABLE `category`
   ADD PRIMARY KEY (`id`);
 
 --
--- Index pour la table `command`
+-- Indexes for table `command`
 --
 ALTER TABLE `command`
   ADD PRIMARY KEY (`id`);
 
 --
--- Index pour la table `details_command`
+-- Indexes for table `details_command`
 --
 ALTER TABLE `details_command`
   ADD PRIMARY KEY (`id`);
 
 --
--- Index pour la table `pictures`
+-- Indexes for table `pictures`
 --
 ALTER TABLE `pictures`
   ADD PRIMARY KEY (`id`);
 
 --
--- Index pour la table `product`
+-- Indexes for table `product`
 --
 ALTER TABLE `product`
   ADD PRIMARY KEY (`id`);
 
 --
--- Index pour la table `users`
+-- Indexes for table `users`
 --
 ALTER TABLE `users`
   ADD PRIMARY KEY (`id`);
 
 --
--- AUTO_INCREMENT pour les tables exportées
+-- AUTO_INCREMENT for dumped tables
 --
 
 --
--- AUTO_INCREMENT pour la table `ads`
+-- AUTO_INCREMENT for table `ads`
 --
 ALTER TABLE `ads`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
 --
--- AUTO_INCREMENT pour la table `category`
+-- AUTO_INCREMENT for table `category`
 --
 ALTER TABLE `category`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+
 --
--- AUTO_INCREMENT pour la table `command`
+-- AUTO_INCREMENT for table `command`
 --
 ALTER TABLE `command`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=126;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=130;
+
 --
--- AUTO_INCREMENT pour la table `details_command`
+-- AUTO_INCREMENT for table `details_command`
 --
 ALTER TABLE `details_command`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=32;
+
 --
--- AUTO_INCREMENT pour la table `pictures`
+-- AUTO_INCREMENT for table `pictures`
 --
 ALTER TABLE `pictures`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=46;
+
 --
--- AUTO_INCREMENT pour la table `product`
+-- AUTO_INCREMENT for table `product`
 --
 ALTER TABLE `product`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
+
 --
--- AUTO_INCREMENT pour la table `users`
+-- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+COMMIT;
+
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
