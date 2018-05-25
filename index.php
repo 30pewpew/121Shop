@@ -24,8 +24,8 @@ require $nav; ?>
             <label for="search"><i class="material-icons">search</i></label>
             <i class="material-icons">close</i>
           </div>
-
           <div class="center-align">
+
             <button type="submit" name="search" class="blue waves-light miaw waves-effect btn hide">Search</button>
           </div>
         </form>
@@ -48,11 +48,11 @@ require $nav; ?>
    product.thumbnail as 'thumbnail',
 
     SUM(command.quantity) as 'total',
-    command.statut,
-    command.id_produit
+    command.state,
+    command.id_product
 
     FROM product, command
-    WHERE product.id = command.id_produit AND command.statut = 'paid'
+    WHERE product.id = command.id_product AND command.state = 'paid'
     GROUP BY product.id
     ORDER BY SUM(command.quantity) DESC LIMIT 3";
     $resultfirst = $connection->query($queryfirst);

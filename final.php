@@ -14,16 +14,16 @@
                        product.price as 'price',
 
                        command.id as 'idcmd',
-                       command.id_produit,
+                       command.id_product,
                        command.quantity as 'quantity',
-                       command.statut,
+                       command.state,
                        command.id_user as 'iduser',
 
                        users.id
 
                        FROM product, command, users
-                       WHERE product.id = command.id_produit AND users.id = command.id_user
-                       AND command.id_user = '{$_SESSION['id']}' AND command.statut = 'ordered'";
+                       WHERE product.id = command.id_product AND users.id = command.id_user
+                       AND command.id_user = '{$_SESSION['id']}' AND command.state = 'ordered'";
     $resultcmd = $connection->query($querycmd);
     if($resultcmd->num_rows > 0){
       while ($rowcmd = $resultcmd->fetch_assoc()) {
@@ -52,7 +52,7 @@
                                                   address,
                                                   country,
                                                   city,
-                                                  statut) VALUES('$productcmd',
+                                                  state) VALUES('$productcmd',
                                                                '$quantitycmd',
                                                                '$price',
                                                                '$idcmd',
@@ -64,7 +64,7 @@
                                                                'ready')";
     $resultdetails = $connection->query($query_details);
 
-    $querypay = "UPDATE command SET statut = 'paid' WHERE id_user = '{$_SESSION['id']}' AND statut = 'ordered'";
+    $querypay = "UPDATE command SET state = 'paid' WHERE id_user = '{$_SESSION['id']}' AND state = 'ordered'";
     $resultpay = mysqli_query($connection, $querypay);
   }
 }
