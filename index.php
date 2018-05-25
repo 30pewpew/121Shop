@@ -96,7 +96,7 @@ require $nav; ?>
 
             </div>
           </div>
-
+		  <!--CATEGORIES-->
           <div class="container-fluid center-align categories">
             <a href="#category" class="button-rounded btn-large waves-effect waves-light">Categories</a>
             <div class="container" id="category">
@@ -130,31 +130,7 @@ require $nav; ?>
               </div>
 
 
-              <div class="container-fluid about" id="about">
-                <div class="container">
-                  <div class="row">
-                    <div class="col s12 m6">
-                      <div class="card animated slideInUp wow">
-                        <div class="card-image">
-                          <img src="src/img/about.jpg" alt="">
-                        </div>
-                      </div>
-                    </div>
-
-                    <div class="col s12 m6">
-                      <h3 class="animated slideInUp wow">About Us</h3>
-                      <div class="divider animated slideInUp wow"></div>
-                      <p class="animated slideInUp wow">Lorem ipsum dolor sit amet, consectetur adipisicing elit,
-                        sed do eiusmodtempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                        Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat
-                        nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia
-                        deserunt mollit anim id est laborum.</p>
-                      </div>
-
-                    </div>
-                  </div>
-                </div>
+              
 
                 <div class="container contact" id="contact">
                   <div class="row">

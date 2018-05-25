@@ -1,7 +1,7 @@
 <?php
 session_start();
 
-if ($_SESSION['item'] < 1 OR !isset($_SESSION['logged_in'])) {
+if (!isset($_SESSION['logged_in'])) {
     header('Location: sign');
 }
 

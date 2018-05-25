@@ -17,7 +17,7 @@ else {
       <nav>
         <div class="nav-wrapper">
           <div class="col s12">
-            <a href="index" class="breadcrumb">Smartshop</a>
+            <a href="index" class="breadcrumb">Esy Buys</a>
             <a href="editprofile" class="breadcrumb">Edit Profile</a>
           </div>
         </div>
