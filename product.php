@@ -61,7 +61,7 @@ $id_product =$_GET['id'];
          <?php
 
          //get categories
-           $querypic = "SELECT picture, id_product FROM pictures WHERE id_product = '$id_pic'";
+           $querypic = "SELECT picture, id_produit FROM pictures WHERE id_produit = '$id_pic'";
            $total = $connection->query($querypic);
            if ($total->num_rows > 0) {
            // output data of each row
@@ -71,6 +71,7 @@ $id_product =$_GET['id'];
            <div class="col s12 m4">
              <div class="card hoverable">
                <div class="card-image">
+                 <img class="materialboxed" width="650" src="productsimg/<?= $pics; ?>" alt="">
                </div>
              </div>
            </div>
@@ -90,14 +91,14 @@ $id_product =$_GET['id'];
             <i class="material-icons prefix">shopping_basket</i>
             <input id="icon_prefix" type="number" name="quantity" min="1" class="validate" required>
             <label for="icon_prefix">Quantity</label>
-			<input id="review" type="text" name="review" min="1"  placeholder="Review">
+          </div>
 
            <?php
 
             if (isset($_POST['buy'])) {
 
                if (!isset($_SESSION['logged_in'])) {
-                 echo "<meta http-equiv='refresh' content='0;url=http://localhost/121shop/sign' />";
+                 echo "<meta http-equiv='refresh' content='0;url=http://localhost/Smartshop/sign' />";
                }
 
                else {
@@ -106,7 +107,7 @@ $id_product =$_GET['id'];
               //inserting into command
               include 'db.php';
 
-              $querybuy = "INSERT INTO command(id_product, quantity, state, id_user)
+              $querybuy = "INSERT INTO command(id_produit, quantity, statut, id_user)
               VALUES ('$id_productdb','$quantity','ordered', '$idsess')";
 
             if ($connection->query($querybuy) === TRUE) {

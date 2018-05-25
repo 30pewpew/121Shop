@@ -7,7 +7,7 @@ if (isset($_GET['id'])) {
    $id=$_GET['id'];
    $idsess = $_SESSION['id'];
 
-   $query_delete = "DELETE FROM command WHERE id_user = '$idsess' AND id_product = '$id' AND state != 'paid'";
+   $query_delete = "DELETE FROM command WHERE id_user = '$idsess' AND id_produit = '$id' AND statut != 'paid'";
    $result_delete = $connection->query($query_delete);
 
    $_SESSION['item'] -= 1;
