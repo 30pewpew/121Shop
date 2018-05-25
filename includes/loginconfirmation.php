@@ -25,6 +25,7 @@ echo "<div class='center-align meh'>
 </div>";
 }
 else{
+    $_SESSION['role'] = 'admin';
   if($user_role == 'admin'){
     $_SESSION['id'] = $user_id;
     $_SESSION['firstname'] = $user_firstname;
