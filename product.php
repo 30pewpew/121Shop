@@ -92,13 +92,14 @@ $id_product =$_GET['id'];
             <input id="icon_prefix" type="number" name="quantity" min="1" class="validate" required>
             <label for="icon_prefix">Quantity</label>
           </div>
+          <input id="review" type="text" name="review" min="1" placeholder="Review">
 
            <?php
 
             if (isset($_POST['buy'])) {
 
                if (!isset($_SESSION['logged_in'])) {
-                 echo "<meta http-equiv='refresh' content='0;url=http://localhost/Smartshop/sign' />";
+                 echo "<meta http-equiv='refresh' content='0;url=http://localhost/121Shop/sign' />";
                }
 
                else {

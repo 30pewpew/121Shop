@@ -38,7 +38,7 @@ else {
         <div class="row">
 
             <div class="input-field col s6">
-              <input id="icon_prefix" type="text" name="email" value='<?= $email_sess; ?>' class="validate" placeholder=Ïnput NA if none required>
+              <input id="icon_prefix" type="text" name="email" value='<?= $email_sess; ?>' class="validate" placeholder=Ïnput NA if none  required>
               <label for="icon_prefix">Credit Card Number</label>
             </div>
 

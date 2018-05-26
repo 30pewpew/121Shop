@@ -16,55 +16,41 @@ else {
       <thead>
         <tr>
             <th data-field="name">Item Name</th>
-            <th data-field="category">quantity</th>
-            <th data-field="price">price</th>
-            <th data-field="quantity">user</th>
-            <th data-field="country">country</th>
-            <th data-field="city">city</th>
-            <th data-field="address">address</th>
+            <th data-field="category">Category</th>
+            <th data-field="price">Price</th>
+            <th data-field="quantity">Quantity</th>
+            <th data-field="country">Sub Total</th>
         </tr>
       </thead>
       <tbody class="scroll">
         <?php
-         include 'db.php';
-        //get detailss
-        $querydetails = "SELECT * FROM details_command WHERE id_user = '$idsess' AND statut ='ready'";
-        $result = $connection->query($querydetails);
-        if ($result->num_rows > 0) {
-        // output data of each row
-        while($rowdetails = $result->fetch_assoc()) {
-          $id_details = $rowdetails['id'];
-          $product_details = $rowdetails['product'];
-          $quantity_details = $rowdetails['quantity'];
-          $price_details = $rowdetails['price'];
-          $user_details = $rowdetails['user'];
-          $country_details = $rowdetails['country'];
-          $city_details = $rowdetails['city'];
-          $address_details = $rowdetails['address'];
-          $idcmdd = $rowdetails['id_command'];
+           include 'db.php';
+          //get products
+          $queryproduct = "SELECT product.name as 'name',
+          product.id as 'id', product.price as 'price',
+          category.name as 'category', command.id_user, command.statut,
+          command.quantity as 'quantity'
+FROM category, product, command
+WHERE command.id_produit = product.id AND product.id_category = category.id AND command.statut = 'ordered'";
+          $result1 = $connection->query($queryproduct);
+          if ($result1->num_rows > 0) {
+          // output data of each row
+          while($rowproduct = $result1->fetch_assoc()) {
+            $id_productdb = $rowproduct['id'];
+            $name_product = $rowproduct['name'];
+            $category_product = $rowproduct['category'];
+            $quantity_product = $rowproduct['quantity'];
+            $price_product = $rowproduct['price'];
 
-          ?>
-        <tr>
-          <td><?= $product_details; ?></td>
-          <td><?= $quantity_details; ?></td>
-          <td>$ <?= $price_details; ?></td>
-          <td><?= $user_details; ?></td>
-          <td><?= $country_details; ?></td>
-          <td><?= $city_details; ?></td>
-          <td><?= $address_details; ?></td>
-        </tr>
-      <?php }} ?>
-      <div class="left-align">
-        <?php
-
-        $querycmd = "SELECT id FROM command WHERE id = '$idcmdd'";
-        $getid = mysqli_query($connection, $querycmd);
-        $rowcmd = mysqli_fetch_array($getid);
-        $idcmd = $rowcmd['id'];
-
-        ?>
-        <h5>Invoice #<?= $idcmd; ?></h5>
-      </div>
+            ?>
+          <tr>
+            <td><?= $name_product; ?></td>
+            <td><?= $category_product; ?></td>
+            <td><?= $price_product; ?></td>
+            <td><?= $quantity_product; ?></td>
+            <td><?= $price_product*$quantity_product; ?></td>
+          </tr>
+        <?php }}?>
       </tbody>
     </table>
     <div class="right-align">
