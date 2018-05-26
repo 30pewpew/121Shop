@@ -77,7 +77,7 @@ require $nav; ?>
                 </div>
                   <div class="card-content">
                     <div class="container">
-                      <div class="row">
+                      <div class="row"> 
                         <div class="col s6">
                           <p class="white-text"><i class="left fa fa-dollar"></i> <?= $price_best; ?></p>
                         </div>
@@ -112,7 +112,6 @@ require $nav; ?>
                     $id_category = $rowcategory['id'];
                     $name_category = $rowcategory['name'];
                     $icon_category = $rowcategory['icon'];
-
                     ?>
 
                     <div class="col s12 m4">
