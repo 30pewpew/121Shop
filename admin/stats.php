@@ -36,15 +36,15 @@ if ($_SESSION['role'] !== 'admin') {
         product.id_category,
 
          SUM(command.quantity) as 'total',
-         command.statut,
-         command.id_produit,
+         command.status,
+         command.id_product,
 
          category.name as 'name',
          category.id
 
          FROM product, command, category
-         WHERE product.id = command.id_produit
-         AND command.statut = 'paid' AND category.id = product.id_category
+         WHERE product.id = command.id_product
+         AND command.status = 'paid' AND category.id = product.id_category
          GROUP BY category.id";
          $resultfirst = $connection->query($queryfirst);
          if ($resultfirst->num_rows > 0) {
