@@ -36,7 +36,7 @@ else{
     $_SESSION['email'] = $user_email;
     $_SESSION['role'] = 'admin';
     $_SESSION['logged_in']= 'True';
-    echo "<meta http-equiv='refresh' content='0;url=http://localhost/121shop/admin/index.php' />";
+    echo "<meta http-equiv='refresh' content='0;url=http://localhost/Smartshop/admin/index' />";
   }
     else {
     $_SESSION['id'] = $user_id;

@@ -32,7 +32,7 @@ if ($_SESSION['role'] !== 'admin') {
            <th data-field="price">Price</th>
            <th data-field="quantity">Quantity</th>
            <th data-field="user">User</th>
-           <th data-field="status">status</th>
+           <th data-field="statut">Statut</th>
            <th data-field="delete">Delete</th>
        </tr>
      </thead>
@@ -46,14 +46,14 @@ product.name as 'name',
 product.price as 'price',
 
 SUM(command.quantity),
-command.status as 'status',
-command.id_product,
+command.statut as 'statut',
+command.id_produit,
 command.quantity as 'quantity',
 command.id_user as 'user'
 
 
 FROM product, command
-WHERE product.id = command.id_product
+WHERE product.id = command.id_produit
 GROUP BY command.id
 ORDER BY SUM(command.id_user) DESC ";
 $resultfirst = $connection->query($queryfirst);
@@ -63,7 +63,7 @@ if ($resultfirst->num_rows > 0) {
 
         $idp = $rowfirst['id'];
         $name = $rowfirst['name'];
-        $status = $rowfirst['status'];
+        $statut = $rowfirst['statut'];
         $quantity = $rowfirst['quantity'];
         $price = $rowfirst['price'];
         $user = $rowfirst['user'];
@@ -82,7 +82,7 @@ if ($resultfirst->num_rows > 0) {
       <td><?= $price; ?></td>
       <td><?= $quantity; ?></td>
       <td><?php echo" $userfirstname "." $userlasttname"; ?></td>
-      <td><?= $status; ?></td>
+      <td><?= $statut; ?></td>
       <td><a href="deletecmd.php?id=<?= $idp; ?>&userid=<?= $user; ?>"><i class="material-icons red-text">close</i></a></td>
     </tr>
     <?php }} }} ?>
