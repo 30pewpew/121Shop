@@ -10,8 +10,6 @@ else {
   $idsess = $_SESSION['id'];
 }
 
-
-
  require 'includes/header.php';
  require $nav;?>
  <div class="container-fluid product-page">
@@ -71,7 +69,7 @@ WHERE command.id_produit = product.id AND product.id_category = category.id AND 
         </tbody>
       </table>
       <div class="right-align">
-        <a href="checkout"
+        <a href="checkout.php"
         class='btn-large button-rounded waves-effect waves-light'>
           Check out <i class="material-icons right">payment</i></a>
       </div>

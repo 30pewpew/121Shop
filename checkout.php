@@ -1,17 +1,14 @@
 <?php
 session_start();
-
 if (!isset($_SESSION['logged_in']) && !isset($_SESSION['item'])) {
     header('Location: sign');
 }
-
 elseif($_SESSION['item'] < 1){
   header('Location: index');
 }
 else {
   $nav ='includes/navconnected.php';
   $idsess = $_SESSION['id'];
-
   $email_sess = $_SESSION['email'];
   $country_sess = $_SESSION['country'];
   $firstname_sess = $_SESSION['firstname'];
@@ -19,7 +16,6 @@ else {
   $city_sess = $_SESSION['city'];
   $address_sess = $_SESSION['address'];
 }
-
  require 'includes/header.php';
  require $nav;?>
  <div class="container-fluid product-page">
@@ -49,10 +45,10 @@ else {
 
             <div class="input-field col s6">
               <select class="icons" name="country" value="<?= $country_sess; ?>">
-          <option value=""  disabled selected>Choose Payment Method</option>
-          <option value="Paypal">Paypal</option>
-          <option value="Visa">Visa</option>
-          <option value="Master Card">Master Card</option>
+          <option value=""  disabled selected>Choose your country</option>
+          <option value="Morocco">Morocco</option>
+          <option value="Egypt">Egypt</option>
+          <option value="Algeria">Algeria</option>
         </select>
         <label>Country</label>
             </div>
@@ -60,13 +56,13 @@ else {
             <div class="input-field col s6">
               <i class="material-icons prefix">account_circle</i>
               <input id="icon_prefix" type="text" name="firstname" value='<?= $firstname_sess; ?>' class="validate" required>
-              <label for="icon_prefix">Full Name</label>
+              <label for="icon_prefix">First Name</label>
             </div>
 
             <div class="input-field col s6">
               <i class="material-icons prefix">perm_identity</i>
               <input id="icon_prefix" type="text" name="lastname" value='<?= $lastname_sess; ?>' class="validate" required>
-              <label for="icon_prefix">Card Number</label>
+              <label for="icon_prefix">Last Name</label>
             </div>
 
 
@@ -90,4 +86,4 @@ else {
     </div>
 </div>
 
- <?php require 'includes/footer.php'; ?>
+<?php require 'includes/footer.php'; ?>
