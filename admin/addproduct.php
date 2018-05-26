@@ -2,15 +2,15 @@
 
 session_start();
 
-if (!isset($_SESSION['id'])) {
-header('Location: ../sign');
-}
-else {
+//if (!isset($_SESSION['id'])) {
+//header('Location: ../sign');
+//}
+//else {
 
-error_reporting(0);
+//error_reporting(0);
 
 require 'includes/header.php';
-require 'includes/navconnected.php'; }
+require 'includes/navconnected.php'; //}
 ?>
 
 <div class="container-fluid product-page">
@@ -19,7 +19,7 @@ require 'includes/navconnected.php'; }
       <div class="nav-wrapper">
         <div class="col s12">
           <a href="index" class="breadcrumb">Dashboard</a>
-          <a href="infoproduct" class="breadcrumb">Managa Products</a>
+          <a href="infoproduct" class="breadcrumb">Manage Products</a>
           <a href="addproduct" class="breadcrumb">Add product</a>
         </div>
       </div>
