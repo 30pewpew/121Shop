@@ -14,7 +14,7 @@ if ($_SESSION['role'] !== 'admin') {
       <nav>
         <div class="nav-wrapper">
           <div class="col s12">
-            <a href="../index" class="breadcrumb">Esy Buys</a>
+            <a href="../index" class="breadcrumb">Smartshop</a>
             <a href="index" class="breadcrumb">Dashboard</a>
           </div>
         </div>
@@ -86,7 +86,7 @@ if ($_SESSION['role'] !== 'admin') {
             }
 
             //get total ordered commands
-            $queryorder = "SELECT count(id) as total, status FROM command WHERE status = 'ordered'";
+            $queryorder = "SELECT count(id) as total, statut FROM command WHERE statut = 'ordered'";
             $resultorder = $connection->query($queryorder);
 
             if($resultorder->num_rows > 0) {
@@ -96,7 +96,7 @@ if ($_SESSION['role'] !== 'admin') {
             }
 
             //get total paid commands
-            $querypaid = "SELECT count(id) as total, status FROM command WHERE status = 'paid'";
+            $querypaid = "SELECT count(id) as total, statut FROM command WHERE statut = 'paid'";
             $resultpaid = $connection->query($querypaid);
 
             if($resultorder->num_rows > 0) {
