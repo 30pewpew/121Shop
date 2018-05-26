@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 05, 2018 at 08:36 AM
+-- Generation Time: May 26, 2018 at 08:26 AM
 -- Server version: 10.1.30-MariaDB
 -- PHP Version: 7.2.2
 
@@ -57,7 +57,7 @@ INSERT INTO `category` (`id`, `name`, `icon`) VALUES
 (3, 'Marvel', 'marvel'),
 (4, 'Loss IRL', 'cam'),
 (5, 'Cartoon', 'cartoon'),
-(6, 'Digital', 'vr');
+(6, 'ESY', 'esy');
 
 -- --------------------------------------------------------
 
@@ -79,12 +79,6 @@ CREATE TABLE `command` (
 --
 
 INSERT INTO `command` (`id`, `id_produit`, `quantity`, `dat`, `statut`, `id_user`) VALUES
-(41, 1, 1, '2017-02-06 13:58:34', 'paid', 7),
-(61, 11, 1, '2017-02-07 16:21:05', 'paid', 8),
-(63, 9, 1, '2017-02-07 16:28:20', 'paid', 8),
-(64, 12, 1, '2017-02-07 16:30:14', 'paid', 8),
-(66, 13, 1, '2017-02-07 16:33:19', 'paid', 8),
-(67, 13, 1, '2017-02-07 16:34:20', 'paid', 8),
 (69, 14, 1, '2017-02-07 19:14:55', 'paid', 5),
 (70, 14, 1, '2017-02-08 12:09:02', 'paid', 11),
 (71, 12, 1, '2017-02-08 15:13:03', 'paid', 11),
@@ -95,37 +89,12 @@ INSERT INTO `command` (`id`, `id_produit`, `quantity`, `dat`, `statut`, `id_user
 (76, 12, 1, '2017-02-08 16:34:58', 'paid', 11),
 (77, 9, 1, '2017-02-08 16:46:32', 'paid', 11),
 (78, 9, 1, '2017-02-09 13:53:03', 'paid', 11),
-(80, 9, 1, '2017-02-11 09:12:00', 'paid', 8),
-(81, 12, 1, '2017-02-11 17:18:30', 'paid', 8),
-(82, 14, 1, '2017-02-12 07:48:51', 'paid', 8),
-(83, 16, 1, '2017-02-12 07:53:37', 'paid', 8),
-(84, 12, 1, '2017-02-14 08:20:56', 'paid', 8),
-(86, 12, 1, '2017-02-14 09:15:08', 'paid', 8),
-(87, 14, 1, '2017-02-15 13:36:42', 'paid', 8),
-(88, 9, 1, '2017-02-15 13:36:42', 'paid', 8),
-(89, 12, 1, '2017-02-15 13:45:26', 'paid', 8),
-(90, 14, 1, '2017-02-15 15:01:27', 'paid', 8),
-(91, 12, 1, '2017-02-15 15:01:27', 'paid', 8),
-(92, 13, 1, '2017-02-15 15:05:20', 'paid', 8),
-(93, 11, 1, '2017-02-15 15:05:20', 'paid', 8),
-(99, 13, 1, '2017-02-15 15:48:25', 'paid', 8),
 (101, 13, 1, '2017-02-15 17:10:14', 'paid', 11),
-(111, 12, 1, '2017-02-19 22:16:32', 'paid', 8),
-(112, 13, 1, '2017-02-19 22:16:32', 'paid', 8),
-(113, 12, 1, '2017-02-19 22:22:05', 'paid', 8),
-(114, 13, 1, '2017-02-19 22:22:05', 'paid', 8),
-(115, 14, 1, '2017-02-19 22:26:43', 'paid', 8),
-(116, 16, 1, '2017-02-19 22:26:43', 'paid', 8),
-(117, 11, 1, '2017-02-19 22:27:39', 'paid', 8),
-(118, 9, 1, '2017-02-19 22:27:39', 'paid', 8),
-(119, 9, 1, '2017-02-19 22:29:15', 'paid', 8),
-(120, 13, 1, '2017-02-19 22:29:15', 'paid', 8),
-(121, 14, 1, '2017-02-19 22:45:27', 'paid', 8),
-(125, 13, 2, '2017-02-20 10:49:00', 'paid', 8),
-(126, 13, 2, '2018-05-04 22:43:45', 'ordered', 0),
-(127, 13, 2, '2018-05-04 22:43:49', 'ordered', 0),
-(128, 12, 2, '2018-05-05 05:49:57', 'ordered', 0),
-(129, 17, 2, '2018-05-05 06:16:38', 'ordered', 0);
+(139, 12, 3, '2018-05-26 01:03:12', 'ordered', 0),
+(140, 12, 3, '2018-05-26 01:03:18', 'ordered', 0),
+(141, 14, 5, '2018-05-26 01:03:26', 'ordered', 0),
+(142, 15, 3, '2018-05-26 01:03:35', 'ordered', 0),
+(143, 9, 2, '2018-05-26 04:55:13', 'ordered', 0);
 
 -- --------------------------------------------------------
 
@@ -228,7 +197,10 @@ INSERT INTO `pictures` (`id`, `picture`, `id_produit`) VALUES
 (42, 'highres-Canon-EOS-7D-Mark-II-with-lens-1_1411133185.jpg', 16),
 (43, 'nexus-6p-9444.0.jpg', 17),
 (44, 'nexus-6p-9693.0.jpg', 17),
-(45, 'Google-Nexus-6P-Review-Conc.jpg', 17);
+(45, 'Google-Nexus-6P-Review-Conc.jpg', 17),
+(46, '', 26),
+(47, '', 26),
+(48, '', 26);
 
 -- --------------------------------------------------------
 
@@ -252,16 +224,22 @@ CREATE TABLE `product` (
 --
 
 INSERT INTO `product` (`id`, `id_category`, `name`, `description`, `price`, `id_picture`, `thumbnail`, `promo`) VALUES
-(7, 1, 'Mini Pekka', 'By Skizzo Perena', 560, 2, 'clash_royale_1.png', ''),
-(8, 1, 'Dragon', 'By Skizzo Perena', 700, 8, 'clash_royale_2.png', ''),
-(9, 2, 'Garnet', 'By Skizzo Perena', 450, 9, 'crystal_gem_1.png', '1'),
-(11, 6, 'Flag', 'By Skizzo Perena', 600, 10, 'digital_1.jpg', '1'),
-(12, 3, 'Marvel', 'By Skizzo Perena', 839, 12, 'marvel_1.png', ''),
-(13, 5, 'Wooper', 'By Skizzo Perena', 179, 13, 'cartoon_1.jpg', ''),
+(7, 1, 'Clash Mini Pekka', 'By Skizzo Perena', 560, 2, 'clash_royale_1.png', ''),
+(8, 1, 'Clash Dragon', 'By Skizzo Perena', 700, 8, 'clash_royale_2.png', ''),
+(9, 2, 'Crystal Gem Garnet', 'By Skizzo Perena', 450, 9, 'crystal_gem_1.png', '1'),
+(12, 3, 'pokemon Marvel', 'By Skizzo Perena', 839, 12, 'marvel_1.png', ''),
+(13, 5, 'pokemon Wooper', 'By Skizzo Perena', 179, 13, 'cartoon_1.jpg', ''),
 (14, 4, 'Apple Watch', 'By Skizzo Perena', 349, 14, 'apple.jpg', ''),
-(15, 1, 'Giant', 'By Skizzo Perena', 649, 15, 'clash_royale_3.png', ''),
-(16, 2, 'Hokage', 'By Skizzo Perena', 889, 16, 'crystal_gem_2.png', ''),
-(17, 1, 'Pekka', 'By Skizzo Perena', 499, 17, 'clash_royale_4.png', '');
+(15, 1, 'clash Giant', 'By Skizzo Perena', 649, 15, 'clash_royale_3.png', ''),
+(16, 2, 'Crystal gem Hokage', 'By Skizzo Perena', 889, 16, 'crystal_gem_2.png', ''),
+(17, 1, 'Clash Pekka', 'By Skizzo Perena', 499, 17, 'clash_royale_4.png', ''),
+(20, 6, 'esy pair pic', 'esy pic with tasha on bday', 999, 20, 'esy1.jpg', ''),
+(21, 6, 'esy selfie', 'rob', 565, 21, 'esy2.jpg', ''),
+(22, 6, 'esy hubad', 'hubadero', 199, 22, 'esy5.jpg', ''),
+(23, 6, 'esy pose', 'cya', 677, 23, 'esy6.jpg', ''),
+(24, 6, 'esy selfie', 'anutha one', 455, 24, 'esy3.jpg', ''),
+(25, 6, 'esy walwal', 'at palattao\'s house', 189, 25, 'esy4.jpg', ''),
+(26, 4, 'pota', 'tangina', 5555555, 26, '47.jpg', '');
 
 -- --------------------------------------------------------
 
@@ -288,8 +266,6 @@ CREATE TABLE `users` (
 INSERT INTO `users` (`id`, `email`, `firstname`, `lastname`, `password`, `address`, `city`, `country`, `role`) VALUES
 (5, 'ismailghallou@hotmail.com', 'Ismail', 'Ghallou', 'f3b32717d5322d7ba7c505c230785468', 'N 23 Lot El Waha Errachidia', 'Errachidia', 'Morocco', 'admin'),
 (6, 'ismail16smakosh23@gmail.com', 'ahmed', 'ali', '9193ce3b31332b03f7d8af056c692b84', 'N 26 Lot El Waha Errachidia', 'Errachidia', 'Morocco', 'client'),
-(7, 'ismail@hotmail.com', 'omar', 'ahmed', 'd4466cce49457cfea18222f5a7cd3573', 'N 22 Lot El Waha Errachidia', 'Errachidia', 'Morocco', 'client'),
-(8, 'anas@anas.com', 'anas', 'mazouni', '76eb649c047cbecad7c36e71374bc9a5', 'N 20 Lot El dunno Cairo', 'Cairo', 'Morocco', 'client'),
 (9, 'badris@hotmail.com', 'abdo', 'badris', '267c88a9c130619b5e8fe370c0ae7730', 'N 48 Lot El Waha Errachidia', 'Errachidia', 'Morocco', 'client'),
 (10, 'mus@hotmail.com', 'mus', 'ghallou', 'd62ec24d065e424dd816ce7828f62584', 'N 102 Cairo', 'Cairo', 'Egypt', 'client'),
 (11, 'ali@ali.com', 'ali', 'ghallou', '86318e52f5ed4801abe1d13d509443de', 'N 23 Lot El Waha Errachidia', 'Errachidia', 'Morocco', 'client'),
@@ -364,7 +340,7 @@ ALTER TABLE `category`
 -- AUTO_INCREMENT for table `command`
 --
 ALTER TABLE `command`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=130;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=144;
 
 --
 -- AUTO_INCREMENT for table `details_command`
@@ -376,13 +352,13 @@ ALTER TABLE `details_command`
 -- AUTO_INCREMENT for table `pictures`
 --
 ALTER TABLE `pictures`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=46;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=49;
 
 --
 -- AUTO_INCREMENT for table `product`
 --
 ALTER TABLE `product`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
 
 --
 -- AUTO_INCREMENT for table `users`
