@@ -1,12 +1,44 @@
 # CS 121 Shop 
-<h5> admin account</h5> 
 
-email : ismailghallou@hotmail.com<br>
+### Admin account
+
+email : ismailghallou@hotmail.com
 password : ismail
 
-<h5>  sample users </h5> 
+### Sample users
 
-email : anas@anas.com<br>
+email : anas@anas.com
 password : anas
 
-tangina talaga ng cs 121 potangina
+### Screenshots:
+
+Homepage:
+
+![alt text][homepage]
+[homepage]: https://github.com/30pewpew/121Shop/blob/master/screenshots/homepage.png
+
+Login:
+
+![alt text][login]
+[login]: https://github.com/30pewpew/121Shop/blob/master/screenshots/login.png
+
+Product:
+
+![alt text][product]
+[product]: https://github.com/30pewpew/121Shop/blob/master/screenshots/product.png
+
+Cart:
+
+![alt text][cart]
+[cart]: https://github.com/30pewpew/121Shop/blob/master/screenshots/cart.png
+
+Checkout:
+
+![alt text][checkout]
+[checkout]: https://github.com/30pewpew/121Shop/blob/master/screenshots/checkout.png
+
+Success:
+
+![alt text][success]
+[success]: https://github.com/30pewpew/121Shop/blob/master/screenshots/success.png
+
